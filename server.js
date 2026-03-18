@@ -19,6 +19,11 @@ http.createServer((req, res) => {
       return send(res, 200, data);
     }
 
+
+    // WRONG VALIDATION (bug)
+    if (!item.cpu) {
+    return send(res, 400, { message: "cpu missing" });
+}
     if (req.method === 'PUT') {
       let body = '';
       req.on('data', c => body += c);
