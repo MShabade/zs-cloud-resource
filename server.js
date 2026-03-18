@@ -14,7 +14,7 @@ http.createServer((req, res) => {
 
   if (u.pathname.startsWith('/api/resources')) {
     if (req.method === 'GET') {
-      const q = (u.searchParams.get('q') || '').toLowerCase();
+      const q = (u.searchParams.get('q') || '').toLowerCase().trim();
       const data = read().filter(x => x.name.toLowerCase().includes(q));
       return send(res, 200, data);
     }
