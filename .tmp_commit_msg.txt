@@ -1,4 +1,4 @@
-docs: add README skeleton with project title and about section
+docs: expand README with tech stack and setup instructions
 
-Markdown syntax reference: https://www.markdownguide.org/basic-syntax/
-README best practices guide: https://www.makeareadme.com/
+Express framework docs: https://expressjs.com/en/starter/installing.html
+Node.js introduction: https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
