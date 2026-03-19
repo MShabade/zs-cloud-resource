@@ -1,4 +1,5 @@
-docs: expand README with tech stack and setup instructions
+docs: complete README - run tests, project structure, attributions
 
-Express framework docs: https://expressjs.com/en/starter/installing.html
-Node.js introduction: https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
+Jest docs: https://jestjs.io/docs/getting-started
+Supertest on npm: https://www.npmjs.com/package/supertest
+Frankfurter open exchange rate API: https://www.frankfurter.dev

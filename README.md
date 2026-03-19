@@ -21,4 +21,21 @@ Testing: Jest, Supertest
 ## Setup
 npm install
 npm start
-
+
+Open http://localhost:3000 in a browser.
+
+## Run Tests
+npm test
+
+42 tests across unit and integration suites.
+
+## Project Structure
+backend/
+server.js - Express server
+operations.js - CRUD functions
+routes/resources.js - API route handlers
+data/resources.json - Data store
+frontend/
+index.html - Single-page frontend
+tests/
+unit.test.js - Unit tests (28 tests)
