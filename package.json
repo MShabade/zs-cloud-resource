@@ -1,8 +1,22 @@
 {
-  "name": "zs-cloud-resource-10pct",
-  "version": "0.1.0",
-  "private": true,
+  "name": "zs-cloud-resource-manager",
+  "version": "1.0.0",
+  "description": "Cloud Resource Utilization Management System for ZS Associates - B9IS123",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node backend/server.js",
+    "test": "jest --forceExit"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
   }
 }
