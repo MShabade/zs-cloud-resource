@@ -1,6 +1,4 @@
-chore: initialise project - add package.json with Express, uuid, cors, Jest
+docs: add README skeleton with project title and about section
 
-Dependencies chosen from npm documentation: https://docs.npmjs.com/cli/v10/configuring-npm/package-json
-uuid v9 for RFC-4122 IDs: https://www.npmjs.com/package/uuid
-cors middleware: https://www.npmjs.com/package/cors
-Jest testing framework: https://jestjs.io
+Markdown syntax reference: https://www.markdownguide.org/basic-syntax/
+README best practices guide: https://www.makeareadme.com/
