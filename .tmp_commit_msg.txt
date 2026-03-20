@@ -1,4 +1,4 @@
-chore: add backup-storage-01 entry to seed data in resources.json
+feat: add operations.js - create and readById pure functions
 
-AWS S3 storage pricing for realistic cost values: https://aws.amazon.com/s3/pricing/
-Cloud resource status conventions: https://docs.aws.amazon.com/general/latest/gr/rande.html
+Array spread for immutability: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+Array.prototype.find docs: https://www.w3schools.com/jsref/jsref_find.asp
