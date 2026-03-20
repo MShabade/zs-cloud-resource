@@ -1,5 +1,5 @@
-docs: complete README - run tests, project structure, attributions
+chore: add seed data - resources.json with database and compute cluster entries
 
-Jest docs: https://jestjs.io/docs/getting-started
-Supertest on npm: https://www.npmjs.com/package/supertest
-Frankfurter open exchange rate API: https://www.frankfurter.dev
+JSON as lightweight data store: https://www.w3schools.com/js/js_json_intro.asp
+JSON.parse and JSON.stringify MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+AWS region naming convention: https://docs.aws.amazon.com/general/latest/gr/rande.html

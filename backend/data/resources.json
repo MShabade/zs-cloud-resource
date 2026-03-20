@@ -1,0 +1,26 @@
+[
+  {
+    "id": "res-002",
+    "name": "data-platform-db",
+    "type": "Database",
+    "region": "eu-west-1",
+    "cpuUsage": 45,
+    "memoryUsage": 80,
+    "storageGB": 2000,
+    "monthlyCost": 580,
+    "status": "active",
+    "createdAt": "2025-02-10"
+  },
+  {
+    "id": "res-003",
+    "name": "ml-training-cluster",
+    "type": "Compute Cluster",
+    "region": "us-west-2",
+    "cpuUsage": 90,
+    "memoryUsage": 88,
+    "storageGB": 1000,
+    "monthlyCost": 1200,
+    "status": "active",
+    "createdAt": "2025-03-01"
+  }
+]
