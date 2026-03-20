@@ -1,4 +1,5 @@
-feat: add operations.js - create and readById pure functions
+feat: add update and remove functions to operations.js
 
-Array spread for immutability: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
-Array.prototype.find docs: https://www.w3schools.com/jsref/jsref_find.asp
+Object spread for merging updates: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+Array.prototype.filter docs: https://www.w3schools.com/jsref/jsref_filter.asp
+findIndex reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
