@@ -1,5 +1,4 @@
-chore: add seed data - resources.json with database and compute cluster entries
+chore: add backup-storage-01 entry to seed data in resources.json
 
-JSON as lightweight data store: https://www.w3schools.com/js/js_json_intro.asp
-JSON.parse and JSON.stringify MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
-AWS region naming convention: https://docs.aws.amazon.com/general/latest/gr/rande.html
+AWS S3 storage pricing for realistic cost values: https://aws.amazon.com/s3/pricing/
+Cloud resource status conventions: https://docs.aws.amazon.com/general/latest/gr/rande.html
