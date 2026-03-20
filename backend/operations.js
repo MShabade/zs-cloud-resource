@@ -25,4 +25,17 @@ function remove(resources, id) {
     deleted: resource,
     newArray: resources.filter((r) => r.id !== id),
   };
-}
+}
+
+function search(resources, query) {
+  const q = query.toLowerCase();
+  return resources.filter(
+    (r) =>
+      r.name.toLowerCase().includes(q) ||
+      r.type.toLowerCase().includes(q) ||
+      r.region.toLowerCase().includes(q) ||
+      r.status.toLowerCase().includes(q)
+  );
+}
+
+module.exports = { create, readById, update, remove, search };
