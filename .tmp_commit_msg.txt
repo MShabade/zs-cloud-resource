@@ -1,4 +1,5 @@
-feat: mount /api/resources router in server.js
+feat: add /api/rates proxy for live currency exchange rates
 
-Express Router docs: https://expressjs.com/en/guide/routing.html#express-router
-REST API naming conventions: https://restfulapi.net/resource-naming/
+Frankfurter open-source exchange rate API: https://www.frankfurter.dev
+Node.js built-in https module: https://nodejs.org/api/https.html
+Consuming external APIs in Express: https://www.geeksforgeeks.org/how-to-make-http-requests-in-node-js/
