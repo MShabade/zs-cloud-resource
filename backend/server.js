@@ -29,4 +29,16 @@ app.get("/api/rates", (req, res) => {
   }).on("error", (err) => {
     res.status(502).json({ error: "Could not reach rates API: " + err.message });
   });
-});
+});
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;

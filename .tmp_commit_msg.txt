@@ -1,5 +1,5 @@
-feat: add /api/rates proxy for live currency exchange rates
+feat: add root route, conditional app.listen, module.exports to server.js
 
-Frankfurter open-source exchange rate API: https://www.frankfurter.dev
-Node.js built-in https module: https://nodejs.org/api/https.html
-Consuming external APIs in Express: https://www.geeksforgeeks.org/how-to-make-http-requests-in-node-js/
+res.sendFile Express docs: https://expressjs.com/en/api.html#res.sendFile
+require.main===module for testability: https://nodejs.org/api/modules.html#accessing-the-main-module
+module.exports for Jest and Supertest: https://jestjs.io/docs/configuration
