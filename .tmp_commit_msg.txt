@@ -1,5 +1,5 @@
-feat: add search function and module.exports to operations.js
+feat: bootstrap Express server - cors, json parser, static middleware
 
-String.prototype.includes for case-insensitive matching: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-toLowerCase for normalisation: https://www.w3schools.com/jsref/jsref_tolowercase.asp
-Node.js module.exports: https://nodejs.org/api/modules.html#moduleexports
+Express getting started: https://expressjs.com/en/starter/hello-world.html
+cors middleware npm: https://www.npmjs.com/package/cors
+express.static docs: https://expressjs.com/en/starter/static-files.html
