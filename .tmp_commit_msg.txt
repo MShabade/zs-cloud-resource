@@ -1,5 +1,4 @@
-feat: bootstrap Express server - cors, json parser, static middleware
+feat: mount /api/resources router in server.js
 
-Express getting started: https://expressjs.com/en/starter/hello-world.html
-cors middleware npm: https://www.npmjs.com/package/cors
-express.static docs: https://expressjs.com/en/starter/static-files.html
+Express Router docs: https://expressjs.com/en/guide/routing.html#express-router
+REST API naming conventions: https://restfulapi.net/resource-naming/
