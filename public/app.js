@@ -39,3 +39,6 @@ async function del(id) {
 }
 
 load();
+
+// auto refresh every 5 seconds (real-time feel)
+setInterval(load, 5000);
