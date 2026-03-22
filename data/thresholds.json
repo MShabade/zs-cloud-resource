@@ -1,0 +1,4 @@
+{
+  "cpu": { "warning": 60, "critical": 80 },
+  "memory": { "warning": 70, "critical": 90 }
+}
