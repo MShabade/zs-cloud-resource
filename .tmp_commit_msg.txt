@@ -1,5 +1,5 @@
-feat: add root route, conditional app.listen, module.exports to server.js
+feat: add routes/resources.js - file I/O helpers and GET list route
 
-res.sendFile Express docs: https://expressjs.com/en/api.html#res.sendFile
-require.main===module for testability: https://nodejs.org/api/modules.html#accessing-the-main-module
-module.exports for Jest and Supertest: https://jestjs.io/docs/configuration
+Express Router: https://expressjs.com/en/4x/api.html#router
+fs.readFileSync and writeFileSync: https://nodejs.org/api/fs.html#fsreadfilesyncpath-options
+path.join for cross-platform paths: https://nodejs.org/api/path.html#pathjoinpaths
