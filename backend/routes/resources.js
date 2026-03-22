@@ -31,4 +31,16 @@ router.get("/", (req, res) => {
   }
 
   res.json(resources);
+});
+
+
+router.get("/:id", (req, res) => {
+  const resources = readData();
+  const resource = readById(resources, req.params.id);
+
+  if (!resource) {
+    return res.status(404).json({ error: "Resource not found" });
+  }
+
+  res.json(resource);
 });

@@ -1,5 +1,5 @@
-feat: add routes/resources.js - file I/O helpers and GET list route
+feat: add GET /:id route - fetch single resource by ID
 
-Express Router: https://expressjs.com/en/4x/api.html#router
-fs.readFileSync and writeFileSync: https://nodejs.org/api/fs.html#fsreadfilesyncpath-options
-path.join for cross-platform paths: https://nodejs.org/api/path.html#pathjoinpaths
+Express route parameters req.params: https://expressjs.com/en/guide/routing.html#route-parameters
+HTTP 404 status code: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+RESTful GET by ID: https://restfulapi.net/http-methods/#get
