@@ -67,4 +67,7 @@ http.createServer((req, res) => {
 function send(res, code, body, type = 'application/json') {
   res.writeHead(code, { 'Content-Type': type });
   res.end(type === 'application/json' ? JSON.stringify(body) : body);
+
+  const thresholdFile = path.join(__dirname,'data','thresholds.json');
+const thresholds = JSON.parse(fs.readFileSync(thresholdFile));
 }
