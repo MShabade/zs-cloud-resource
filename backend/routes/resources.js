@@ -76,4 +76,24 @@ router.post("/", (req, res) => {
     return res
       .status(400)
       .json({ error: "Memory usage must be between 0 and 100" });
-  }
+  }
+
+  const newResource = {
+    id: uuidv4(),
+    name: name.trim(),
+    type: type.trim(),
+    region: region.trim(),
+    cpuUsage: cpu,
+    memoryUsage: mem,
+    storageGB: Number(storageGB) || 0,
+    monthlyCost: Number(monthlyCost) || 0,
+    status: status || "active",
+    createdAt: new Date().toISOString().split("T")[0],
+  };
+
+  const resources = readData();
+  const updatedList = create(resources, newResource);
+  writeData(updatedList);
+
+  res.status(201).json(newResource);
+});

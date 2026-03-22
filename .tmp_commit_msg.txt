@@ -1,5 +1,5 @@
-feat: add POST route with input validation to resources router
+feat: complete POST handler - generate UUID, build resource object, persist
 
-HTTP 400 Bad Request: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
-Server-side validation best practices: https://owasp.org/www-community/controls/Input_Validation
-req.body parsing with express.json: https://expressjs.com/en/api.html#req.body
+uuid v4 spec: https://www.npmjs.com/package/uuid
+Date.toISOString for ISO 8601 date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+HTTP 201 Created: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201
