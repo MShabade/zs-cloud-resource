@@ -25,8 +25,8 @@ http.createServer((req, res) => {
     //return send(res, 400, { message: "cpu missing" });
 
     // correct validation (bug)
-    if (item.cpu === undefined) {
-    return send(res, 400, { message: "cpu required" });
+    //if (item.cpu === undefined) {
+    //return send(res, 400, { message: "cpu required" });
 
 }
     if (req.method === 'PUT') {
@@ -34,6 +34,12 @@ http.createServer((req, res) => {
       req.on('data', c => body += c);
       req.on('end', () => {
         const item = JSON.parse(body || '{}');
+
+   // correct place for validation (bug)
+        if (item.cpu === undefined) {
+        return send(res, 400, { message: "cpu required" });
+     }
+
         if (!item.id || !item.name) return send(res, 400, { message: 'id and name required' });
         const data = read();
         const i = data.findIndex(x => x.id === Number(item.id));
