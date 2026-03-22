@@ -1,5 +1,5 @@
-feat: add GET /:id route - fetch single resource by ID
+feat: add POST route with input validation to resources router
 
-Express route parameters req.params: https://expressjs.com/en/guide/routing.html#route-parameters
-HTTP 404 status code: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-RESTful GET by ID: https://restfulapi.net/http-methods/#get
+HTTP 400 Bad Request: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+Server-side validation best practices: https://owasp.org/www-community/controls/Input_Validation
+req.body parsing with express.json: https://expressjs.com/en/api.html#req.body

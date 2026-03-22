@@ -43,4 +43,37 @@ router.get("/:id", (req, res) => {
   }
 
   res.json(resource);
-});
+});
+
+
+router.post("/", (req, res) => {
+  const {
+    name,
+    type,
+    region,
+    cpuUsage,
+    memoryUsage,
+    storageGB,
+    monthlyCost,
+    status,
+  } = req.body;
+
+  if (!name || !type || !region) {
+    return res
+      .status(400)
+      .json({ error: "Name, type, and region are required" });
+  }
+
+  const cpu = Number(cpuUsage) || 0;
+  const mem = Number(memoryUsage) || 0;
+
+  if (cpu < 0 || cpu > 100) {
+    return res
+      .status(400)
+      .json({ error: "CPU usage must be between 0 and 100" });
+  }
+  if (mem < 0 || mem > 100) {
+    return res
+      .status(400)
+      .json({ error: "Memory usage must be between 0 and 100" });
+  }
