@@ -19,7 +19,6 @@ http.createServer((req, res) => {
       return send(res, 200, data);
     }
 
-
     // wrong validation (bug)
     //if (!item.cpu) {
     //return send(res, 400, { message: "cpu missing" });
@@ -28,7 +27,6 @@ http.createServer((req, res) => {
     //if (item.cpu === undefined) {
     //return send(res, 400, { message: "cpu required" });
 
-}
     if (req.method === 'PUT') {
       let body = '';
       req.on('data', c => body += c);
