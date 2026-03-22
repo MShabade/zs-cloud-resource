@@ -4,26 +4,95 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cloud Resource Utilization</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #3498db;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th {
+      background: #3498db;
+      color: white;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    #msg {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Cloud Resource Utilization Manager</h1>
+
+<div class="container">
+  <h1>☁ Cloud Resource Utilization Dashboard</h1>
 
   <input id="search" placeholder="Search by name" />
-  <button id="load">Load</button>
+  <button id="load">Load Resources</button>
 
   <form id="form">
-    <input id="id" type="number" placeholder="id" required />
-    <input id="name" placeholder="name" required />
-    <input id="cpu" type="number" min="0" max="100" placeholder="cpu %" required />
-    <input id="memory" type="number" min="0" max="100" placeholder="memory %" required />
-    <input id="storage" type="number" min="0" placeholder="storage gb" required />
-    <input id="billing" type="number" min="0" placeholder="billing" required />
-    <button type="submit">Save</button>
+    <input id="id" type="number" placeholder="ID" required />
+    <input id="name" placeholder="Resource Name" required />
+    <input id="cpu" type="number" min="0" max="100" placeholder="CPU %" required />
+    <input id="memory" type="number" min="0" max="100" placeholder="Memory %" required />
+    <input id="storage" type="number" min="0" placeholder="Storage (GB)" required />
+    <input id="billing" type="number" min="0" placeholder="Billing (€)" required />
+    <button type="submit">Save Resource</button>
   </form>
 
   <p id="msg"></p>
-  <table border="1" id="table"></table>
 
-  <script src="app.js"></script>
+  <table id="table"></table>
+</div>
+
+<script src="app.js"></script>
+
 </body>
 </html>
