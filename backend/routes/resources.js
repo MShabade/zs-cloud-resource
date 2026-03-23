@@ -96,4 +96,38 @@ router.post("/", (req, res) => {
   writeData(updatedList);
 
   res.status(201).json(newResource);
+});
+
+router.put("/:id", (req, res) => {
+  const resources = readData();
+
+  if (!readById(resources, req.params.id)) {
+    return res.status(404).json({ error: "Resource not found" });
+  }
+
+  const {
+    name,
+    type,
+    region,
+    cpuUsage,
+    memoryUsage,
+    storageGB,
+    monthlyCost,
+    status,
+  } = req.body;
+
+  const updates = {};
+  if (name !== undefined) updates.name = name.trim();
+  if (type !== undefined) updates.type = type.trim();
+  if (region !== undefined) updates.region = region.trim();
+  if (cpuUsage !== undefined) updates.cpuUsage = Number(cpuUsage);
+  if (memoryUsage !== undefined) updates.memoryUsage = Number(memoryUsage);
+  if (storageGB !== undefined) updates.storageGB = Number(storageGB);
+  if (monthlyCost !== undefined) updates.monthlyCost = Number(monthlyCost);
+  if (status !== undefined) updates.status = status;
+
+  const result = update(resources, req.params.id, updates);
+  writeData(result.newArray);
+
+  res.json(result.updated);
 });

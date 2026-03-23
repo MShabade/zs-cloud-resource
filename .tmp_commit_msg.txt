@@ -1,5 +1,5 @@
-feat: complete POST handler - generate UUID, build resource object, persist
+feat: add PUT /:id update route to resources router
 
-uuid v4 spec: https://www.npmjs.com/package/uuid
-Date.toISOString for ISO 8601 date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
-HTTP 201 Created: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201
+HTTP PUT semantics: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT
+Partial update - only defined fields: https://restfulapi.net/http-methods/#put
+Number coercion: https://www.w3schools.com/jsref/jsref_number.asp
