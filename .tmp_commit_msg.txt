@@ -1,6 +1,5 @@
-feat: scaffold index.html - head, reset CSS, header and nav tab styles
+feat: add CSS for main layout, tab panels, card component, stats grid
 
-CSS box-sizing reset: https://www.w3schools.com/css/css3_box-sizing.asp
-CSS linear-gradient: https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient
-CSS Flexbox for header layout: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-HTML meta viewport: https://www.w3schools.com/css/css_rwd_viewport.asp
+CSS Grid layout: https://css-tricks.com/snippets/css/complete-guide-grid/
+CSS border-radius: https://www.w3schools.com/css/css3_borders.asp
+CSS text-transform uppercase: https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform

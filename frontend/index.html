@@ -62,4 +62,56 @@
       }
       nav button:hover { color: #1a1a2e; }
       nav button.active { color: #2563eb; border-bottom-color: #2563eb; }
+
+      /* ── Page wrapper ─────────────────────────────────────────────────── */
+      main { padding: 28px 32px; max-width: 1300px; margin: 0 auto; background: transparent; }
+
+      /* ── Tab panels ───────────────────────────────────────────────────── */
+      .tab-panel { display: none; }
+      .tab-panel.active { display: block; }
+
+      /* ── Card ─────────────────────────────────────────────────────────── */
+      .card {
+        background: #fff;
+        border: 1px solid #d0d7e2;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin-bottom: 24px;
+      }
+      .card h2 {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: #6b7a99;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eef1f6;
+      }
+
+      /* ── Dashboard stat cards ─────────────────────────────────────────── */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px;
+      }
+      .stat {
+        background: #f4f7fb;
+        border: 1px solid #d0d7e2;
+        border-radius: 6px;
+        padding: 18px 20px;
+      }
+      .stat label {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #6b7a99;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 8px;
+      }
+      .stat p { font-size: 1.7rem; font-weight: 700; color: #1a1a2e; }
+      .stat.c-blue   { border-left: 4px solid #2563eb; }
+      .stat.c-green  { border-left: 4px solid #16a34a; }
+      .stat.c-orange { border-left: 4px solid #d97706; }
 
