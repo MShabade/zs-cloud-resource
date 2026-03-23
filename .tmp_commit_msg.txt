@@ -1,5 +1,5 @@
-feat: add PUT /:id update route to resources router
+feat: add DELETE /:id route and export router
 
-HTTP PUT semantics: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT
-Partial update - only defined fields: https://restfulapi.net/http-methods/#put
-Number coercion: https://www.w3schools.com/jsref/jsref_number.asp
+HTTP DELETE method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE
+Express module.exports for router: https://expressjs.com/en/guide/routing.html#express-router
+RESTful delete patterns: https://restfulapi.net/http-methods/#delete

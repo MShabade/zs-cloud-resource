@@ -130,4 +130,19 @@ router.put("/:id", (req, res) => {
   writeData(result.newArray);
 
   res.json(result.updated);
-});
+});
+
+
+router.delete("/:id", (req, res) => {
+  const resources = readData();
+  const result = remove(resources, req.params.id);
+
+  if (!result) {
+    return res.status(404).json({ error: "Resource not found" });
+  }
+
+  writeData(result.newArray);
+  res.json({ message: "Resource deleted successfully", resource: result.deleted });
+});
+
+module.exports = router;
