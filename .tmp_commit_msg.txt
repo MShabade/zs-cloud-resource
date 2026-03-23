@@ -1,5 +1,6 @@
-feat: add DELETE /:id route and export router
+feat: scaffold index.html - head, reset CSS, header and nav tab styles
 
-HTTP DELETE method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE
-Express module.exports for router: https://expressjs.com/en/guide/routing.html#express-router
-RESTful delete patterns: https://restfulapi.net/http-methods/#delete
+CSS box-sizing reset: https://www.w3schools.com/css/css3_box-sizing.asp
+CSS linear-gradient: https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient
+CSS Flexbox for header layout: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+HTML meta viewport: https://www.w3schools.com/css/css_rwd_viewport.asp

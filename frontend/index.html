@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZS Associates - Cloud Resource Manager</title>
+    <style>
+      /* ── Reset & base ─────────────────────────────────────────────────── */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+        background-attachment: fixed;
+        color: #1a1a2e;
+        min-height: 100vh;
+      }
+
+      /* ── Top header bar ───────────────────────────────────────────────── */
+      header {
+        background: #1a1a2e;
+        color: #fff;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+      }
+      header h1 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      header span {
+        margin-left: 16px;
+        font-size: 0.82rem;
+        color: #aab4c8;
+        border-left: 1px solid #3a3a5c;
+        padding-left: 16px;
+      }
+
+      /* ── Tab navigation ───────────────────────────────────────────────── */
+      nav {
+        background: #fff;
+        border-bottom: 1px solid #d0d7e2;
+        padding: 0 32px;
+        display: flex;
+        gap: 2px;
+      }
+      nav button {
+        background: none;
+        border: none;
+        border-bottom: 3px solid transparent;
+        padding: 14px 20px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #5a6479;
+        cursor: pointer;
+        transition: color 0.15s, border-color 0.15s;
+        border-radius: 0;
+        margin: 0;
+      }
+      nav button:hover { color: #1a1a2e; }
+      nav button.active { color: #2563eb; border-bottom-color: #2563eb; }
+
