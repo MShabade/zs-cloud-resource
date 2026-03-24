@@ -1,5 +1,5 @@
-feat: add CSS for search bar, buttons, table, sortable headers, status badges
+feat: add form, currency converter, feedback message and responsive CSS
 
-CSS table border-collapse: https://www.w3schools.com/css/css_table.asp
-CSS hover pseudo-class: https://www.w3schools.com/cssref/sel_hover.php
-CSS after pseudo-element for sort arrows: https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+CSS Grid for form layout: https://www.w3schools.com/css/css_grid.asp
+CSS media queries for responsive design: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+CSS focus outline for accessibility: https://www.w3schools.com/css/css_outline.asp

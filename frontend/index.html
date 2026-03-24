@@ -180,4 +180,81 @@
       .badge-active   { background: #dcfce7; color: #15803d; }
       .badge-idle     { background: #fef3c7; color: #b45309; }
       .badge-inactive { background: #fee2e2; color: #b91c1c; }
-
+
+      /* ── Form ─────────────────────────────────────────────────────────── */
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 32px;
+        max-width: 720px;
+      }
+      .form-group { display: flex; flex-direction: column; gap: 6px; }
+      .form-group label {
+        font-size: 0.77rem;
+        font-weight: 700;
+        color: #6b7a99;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .form-group input,
+      .form-group select {
+        padding: 9px 12px;
+        border: 1px solid #c4cdd9;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        color: #1a1a2e;
+        background: #fff;
+      }
+      .form-group input:focus,
+      .form-group select:focus { outline: 2px solid #2563eb; border-color: #2563eb; }
+      .form-actions { margin-top: 24px; display: flex; gap: 10px; }
+
+      /* ── Currency converter ───────────────────────────────────────────── */
+      .fx-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+      .fx-row label { font-size: 0.85rem; font-weight: 600; color: #6b7a99; }
+      .fx-row select { padding: 8px 12px; border: 1px solid #c4cdd9; border-radius: 5px; font-size: 0.9rem; }
+      .fx-result {
+        margin-top: 18px;
+        padding: 14px 18px;
+        background: #f0f4ff;
+        border: 1px solid #bfcfff;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #1e3a8a;
+        display: none;
+      }
+      .fx-result.visible { display: block; }
+
+      /* ── Feedback messages ────────────────────────────────────────────── */
+      .msg {
+        margin: 10px 0;
+        padding: 10px 14px;
+        border-radius: 5px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: none;
+      }
+      .msg.visible { display: block; }
+      .msg-error   { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+      .msg-success { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+      .msg-info    { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+
+      /* ── Page heading inside each tab ─────────────────────────────────── */
+      .page-heading { margin-bottom: 22px; }
+      .page-heading h2 { font-size: 1.35rem; font-weight: 700; color: #1a1a2e; }
+      .page-heading p  { font-size: 0.82rem; color: #6b7a99; margin-top: 4px; }
+
+      /* ── Responsive ───────────────────────────────────────────────────── */
+      @media (max-width: 900px) {
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .form-grid  { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
