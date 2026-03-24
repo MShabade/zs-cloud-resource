@@ -1,5 +1,5 @@
-feat: add CSS for main layout, tab panels, card component, stats grid
+feat: add CSS for search bar, buttons, table, sortable headers, status badges
 
-CSS Grid layout: https://css-tricks.com/snippets/css/complete-guide-grid/
-CSS border-radius: https://www.w3schools.com/css/css3_borders.asp
-CSS text-transform uppercase: https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform
+CSS table border-collapse: https://www.w3schools.com/css/css_table.asp
+CSS hover pseudo-class: https://www.w3schools.com/cssref/sel_hover.php
+CSS after pseudo-element for sort arrows: https://developer.mozilla.org/en-US/docs/Web/CSS/::after
