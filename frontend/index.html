@@ -257,4 +257,72 @@
         .form-grid  { grid-template-columns: 1fr; }
       }
     </style>
-  </head>
+  </head>
+  <body>
+
+    <header>
+      <h1>ZS Associates &mdash; Cloud Resource Utilization Management</h1>
+    </header>
+
+    <nav>
+      <button class="active" onclick="showTab('tab-dashboard')">Dashboard</button>
+      <button onclick="showTab('tab-resources')">Resources</button>
+      <button onclick="showTab('tab-add')">Add / Edit Resource</button>
+      <button onclick="showTab('tab-currency')">Currency Converter</button>
+    </nav>
+
+    <main>
+
+      <div id="tab-dashboard" class="tab-panel active">
+        <div class="page-heading">
+          <h2>Dashboard Overview</h2>
+          <p>Live summary of all registered cloud resources.</p>
+        </div>
+
+        <div class="card">
+          <h2>Summary Statistics</h2>
+          <div class="stats-grid">
+            <div class="stat c-blue">
+              <label>Total Resources</label>
+              <p id="stat-total">--</p>
+            </div>
+            <div class="stat c-green">
+              <label>Active Resources</label>
+              <p id="stat-active">--</p>
+            </div>
+            <div class="stat c-orange">
+              <label>Avg CPU Usage</label>
+              <p id="stat-cpu">--</p>
+            </div>
+            <div class="stat c-orange">
+              <label>Avg Memory Usage</label>
+              <p id="stat-memory">--</p>
+            </div>
+            <div class="stat c-blue">
+              <label>Total Monthly Cost</label>
+              <p id="stat-cost">--</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Resource Breakdown</h2>
+          <div id="dash-msg" class="msg"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Region</th>
+                  <th>CPU %</th>
+                  <th>Memory %</th>
+                  <th>Monthly Cost</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="dash-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>

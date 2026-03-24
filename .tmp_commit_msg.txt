@@ -1,5 +1,5 @@
-feat: add form, currency converter, feedback message and responsive CSS
+feat: add HTML body - header, nav tabs, dashboard tab with stats and table
 
-CSS Grid for form layout: https://www.w3schools.com/css/css_grid.asp
-CSS media queries for responsive design: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
-CSS focus outline for accessibility: https://www.w3schools.com/css/css_outline.asp
+HTML semantic elements header nav main: https://www.w3schools.com/html/html5_semantic_elements.asp
+HTML table structure thead tbody: https://www.w3schools.com/html/html_tables.asp
+CSS tab switching pattern: https://www.w3schools.com/howto/howto_js_tabs.asp
