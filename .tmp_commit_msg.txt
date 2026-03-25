@@ -1,5 +1,5 @@
-feat: add HTML body - header, nav tabs, dashboard tab with stats and table
+feat: add Resources tab HTML with search bar and sortable table headers
 
-HTML semantic elements header nav main: https://www.w3schools.com/html/html5_semantic_elements.asp
-HTML table structure thead tbody: https://www.w3schools.com/html/html_tables.asp
-CSS tab switching pattern: https://www.w3schools.com/howto/howto_js_tabs.asp
+data-* HTML attributes: https://www.w3schools.com/tags/att_global_data.asp
+aria-live accessibility: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions
+HTML input placeholder: https://www.w3schools.com/tags/att_input_placeholder.asp

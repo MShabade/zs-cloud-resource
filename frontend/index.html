@@ -325,4 +325,44 @@
             </table>
           </div>
         </div>
+      </div>
+
+      <div id="tab-resources" class="tab-panel">
+        <div class="page-heading">
+          <h2>Cloud Resources</h2>
+          <p>Search, sort and manage all cloud resources. Click any column header to sort.</p>
+        </div>
+
+        <div class="card">
+          <h2>Search</h2>
+          <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search by name, type, region or status..." />
+            <button class="btn btn-primary" onclick="searchResources()">Search</button>
+            <button class="btn btn-secondary" onclick="clearSearch()">Clear</button>
+          </div>
+          <div id="table-msg" class="msg" aria-live="polite"></div>
+        </div>
+
+        <div class="card">
+          <h2>All Resources</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="sortable" data-key="name"        onclick="sortResources('name')"       >Name</th>
+                  <th class="sortable" data-key="type"        onclick="sortResources('type')"       >Type</th>
+                  <th class="sortable" data-key="region"      onclick="sortResources('region')"     >Region</th>
+                  <th class="sortable" data-key="cpuUsage"    onclick="sortResources('cpuUsage')"   >CPU %</th>
+                  <th class="sortable" data-key="memoryUsage" onclick="sortResources('memoryUsage')">Memory %</th>
+                  <th class="sortable" data-key="storageGB"   onclick="sortResources('storageGB')"  >Storage (GB)</th>
+                  <th class="sortable" data-key="monthlyCost" onclick="sortResources('monthlyCost')">Cost ($/mo)</th>
+                  <th class="sortable" data-key="status"      onclick="sortResources('status')"     >Status</th>
+                  <th class="sortable" data-key="createdAt"   onclick="sortResources('createdAt')"  >Created</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="resources-body"></tbody>
+            </table>
+          </div>
+        </div>
       </div>
