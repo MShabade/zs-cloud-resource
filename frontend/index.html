@@ -466,4 +466,69 @@
 
     </main>
 
-    <script>
+    <script>
+    <script>
+      const API = "/api/resources";
+
+      let currentResources = [];
+
+      let sortKey = "";
+      let sortDir = 1;
+
+      let exchangeRates = {};
+
+      window.addEventListener("load", () => {
+        loadResources();
+        loadExchangeRates();
+      });
+
+      document.getElementById("search-input").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") searchResources();
+      });
+
+      function showTab(tabId) {
+        document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
+        document.querySelectorAll("nav button").forEach((b) => b.classList.remove("active"));
+
+        document.getElementById(tabId).classList.add("active");
+
+        const order = ["tab-dashboard", "tab-resources", "tab-add", "tab-currency"];
+        document.querySelectorAll("nav button")[order.indexOf(tabId)].classList.add("active");
+
+        if (tabId === "tab-dashboard") renderDashboardTable(currentResources);
+      }
+
+
+      async function loadResources() {
+        try {
+          const res = await fetch(API);
+          if (!res.ok) throw new Error("Server error " + res.status);
+          currentResources = await res.json();
+          renderDashboard(currentResources);
+          renderDashboardTable(currentResources);
+          applySortAndRender();
+          hideMsg("table-msg");
+        } catch (err) {
+          showMsg("table-msg", "Could not load resources: " + err.message, "error");
+        }
+      }
+
+
+      async function searchResources() {
+        const query = document.getElementById("search-input").value.trim();
+        if (!query) { loadResources(); return; }
+        try {
+          const res = await fetch(`${API}?search=${encodeURIComponent(query)}`);
+          if (!res.ok) throw new Error("Search failed");
+          currentResources = await res.json();
+          applySortAndRender();
+          showMsg("table-msg", currentResources.length + " result(s) found for: " + query, "info");
+        } catch (err) {
+          showMsg("table-msg", "Search error: " + err.message, "error");
+        }
+      }
+
+      function clearSearch() {
+        document.getElementById("search-input").value = "";
+        loadResources();
+      }

@@ -1,5 +1,5 @@
-feat: add Currency Converter tab HTML and close main body html
+feat: add JS globals, showTab, loadResources, searchResources to index.html
 
-Frankfurter API for live rates: https://www.frankfurter.dev
-HTML select dynamically populated: https://www.w3schools.com/jsref/met_select_add.asp
-Currency conversion formula reference: https://www.xe.com/currencyconverter/
+Fetch API for HTTP requests: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+async await for concise async code: https://www.w3schools.com/js/js_async.asp
+window load event: https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
