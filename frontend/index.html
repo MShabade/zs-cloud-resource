@@ -365,4 +365,78 @@
             </table>
           </div>
         </div>
+      </div>
+
+      <div id="tab-add" class="tab-panel">
+        <div class="page-heading">
+          <h2 id="form-title">Add New Resource</h2>
+          <p id="form-subtitle">Fill in the details below and click Save. Fields marked * are required.</p>
+        </div>
+
+        <div class="card">
+          <h2>Resource Details</h2>
+          <div id="form-msg" class="msg" aria-live="polite"></div>
+          <input type="hidden" id="edit-id" value="" />
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="f-name">Resource Name *</label>
+              <input type="text" id="f-name" placeholder="e.g. analytics-vm-01" />
+            </div>
+            <div class="form-group">
+              <label for="f-type">Resource Type *</label>
+              <select id="f-type">
+                <option value="">-- Select Type --</option>
+                <option value="Virtual Machine">Virtual Machine</option>
+                <option value="Database">Database</option>
+                <option value="Compute Cluster">Compute Cluster</option>
+                <option value="Storage">Storage</option>
+                <option value="Container">Container</option>
+                <option value="Network">Network</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-region">Region *</label>
+              <select id="f-region">
+                <option value="">-- Select Region --</option>
+                <option value="us-east-1">US East (N. Virginia)</option>
+                <option value="us-west-2">US West (Oregon)</option>
+                <option value="eu-west-1">EU (Ireland)</option>
+                <option value="eu-central-1">EU (Frankfurt)</option>
+                <option value="ap-southeast-1">Asia Pacific (Singapore)</option>
+                <option value="ap-south-1">Asia Pacific (Mumbai)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-status">Status</label>
+              <select id="f-status">
+                <option value="active">Active</option>
+                <option value="idle">Idle</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-cpu">CPU Usage (%)</label>
+              <input type="number" id="f-cpu" min="0" max="100" placeholder="0 to 100" />
+            </div>
+            <div class="form-group">
+              <label for="f-mem">Memory Usage (%)</label>
+              <input type="number" id="f-mem" min="0" max="100" placeholder="0 to 100" />
+            </div>
+            <div class="form-group">
+              <label for="f-storage">Storage (GB)</label>
+              <input type="number" id="f-storage" min="0" placeholder="e.g. 500" />
+            </div>
+            <div class="form-group">
+              <label for="f-cost">Monthly Cost (USD)</label>
+              <input type="number" id="f-cost" min="0" step="0.01" placeholder="e.g. 150.00" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" onclick="saveResource()">Save Resource</button>
+            <button class="btn btn-secondary" onclick="cancelEdit()">Cancel</button>
+          </div>
+        </div>
       </div>

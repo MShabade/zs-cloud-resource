@@ -1,5 +1,5 @@
-feat: add Resources tab HTML with search bar and sortable table headers
+feat: add Add/Edit Resource tab with form, dropdowns and number inputs
 
-data-* HTML attributes: https://www.w3schools.com/tags/att_global_data.asp
-aria-live accessibility: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions
-HTML input placeholder: https://www.w3schools.com/tags/att_input_placeholder.asp
+HTML select element: https://www.w3schools.com/tags/tag_select.asp
+HTML input type number with min max: https://www.w3schools.com/html/html_form_input_types.asp
+HTML hidden input for edit ID: https://www.w3schools.com/tags/att_input_type_hidden.asp
