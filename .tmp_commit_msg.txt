@@ -1,5 +1,5 @@
-feat: add Add/Edit Resource tab with form, dropdowns and number inputs
+feat: add Currency Converter tab HTML and close main body html
 
-HTML select element: https://www.w3schools.com/tags/tag_select.asp
-HTML input type number with min max: https://www.w3schools.com/html/html_form_input_types.asp
-HTML hidden input for edit ID: https://www.w3schools.com/tags/att_input_type_hidden.asp
+Frankfurter API for live rates: https://www.frankfurter.dev
+HTML select dynamically populated: https://www.w3schools.com/jsref/met_select_add.asp
+Currency conversion formula reference: https://www.xe.com/currencyconverter/

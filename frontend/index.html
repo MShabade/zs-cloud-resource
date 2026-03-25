@@ -439,4 +439,31 @@
             <button class="btn btn-secondary" onclick="cancelEdit()">Cancel</button>
           </div>
         </div>
-      </div>
+      </div>
+
+      <div id="tab-currency" class="tab-panel">
+        <div class="page-heading">
+          <h2>Cloud Cost Currency Converter</h2>
+          <p>Converts total monthly cloud spend from USD using live exchange rates.</p>
+        </div>
+
+        <div class="card">
+          <h2>Live Exchange Rates</h2>
+          <div id="fx-status" class="msg"></div>
+          <div class="fx-row">
+            <label for="fx-currency">Convert total cost to:</label>
+            <select id="fx-currency">
+              <option value="">-- Loading rates... --</option>
+            </select>
+            <button class="btn btn-primary" onclick="convertCost()">Convert</button>
+            <button class="btn btn-secondary" onclick="loadExchangeRates()">Refresh Rates</button>
+          </div>
+          <div id="fx-result" class="fx-result"></div>
+        </div>
+
+
+      </div>
+
+    </main>
+
+    <script>
