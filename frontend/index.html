@@ -531,4 +531,106 @@
       function clearSearch() {
         document.getElementById("search-input").value = "";
         loadResources();
-      }
+      }
+
+
+      function renderTable(resources) {
+        const tbody = document.getElementById("resources-body");
+        tbody.innerHTML = "";
+
+        if (resources.length === 0) {
+          const row = tbody.insertRow();
+          const cell = row.insertCell();
+          cell.colSpan = 10;
+          cell.style.cssText = "text-align:center; color:#6b7a99; padding:28px;";
+          cell.textContent = "No resources found.";
+          return;
+        }
+
+        resources.forEach((r) => {
+          const row = document.createElement("tr");
+
+          const cell = (val) => {
+            const td = document.createElement("td");
+            td.textContent = val;
+            return td;
+          };
+
+          row.appendChild(cell(r.name));
+          row.appendChild(cell(r.type));
+          row.appendChild(cell(r.region));
+          row.appendChild(cell(r.cpuUsage + "%"));
+          row.appendChild(cell(r.memoryUsage + "%"));
+          row.appendChild(cell(r.storageGB));
+          row.appendChild(cell("$" + r.monthlyCost.toFixed(2)));
+
+          const statusTd = document.createElement("td");
+          const badge = document.createElement("span");
+          badge.textContent = r.status;
+          badge.className = "badge badge-" + r.status;
+          statusTd.appendChild(badge);
+          row.appendChild(statusTd);
+
+          row.appendChild(cell(r.createdAt));
+
+          const actionTd = document.createElement("td");
+          actionTd.style.cssText = "display:flex; gap:6px; align-items:center;";
+
+          const editBtn = document.createElement("button");
+          editBtn.textContent = "Edit";
+          editBtn.className = "btn btn-secondary btn-sm";
+          editBtn.addEventListener("click", () => {
+            loadIntoForm(r.id);
+            showTab("tab-add");
+          });
+
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "Delete";
+          delBtn.className = "btn btn-danger btn-sm";
+          delBtn.addEventListener("click", () => deleteResource(r.id, r.name));
+
+          actionTd.appendChild(editBtn);
+          actionTd.appendChild(delBtn);
+          row.appendChild(actionTd);
+          tbody.appendChild(row);
+        });
+      }
+
+
+      function renderDashboard(resources) {
+        const total = resources.length;
+        const active = resources.filter((r) => r.status === "active").length;
+        const avgCPU = total
+          ? (resources.reduce((s, r) => s + r.cpuUsage, 0) / total).toFixed(1) : 0;
+        const avgMem = total
+          ? (resources.reduce((s, r) => s + r.memoryUsage, 0) / total).toFixed(1) : 0;
+        const totalCost = resources.reduce((s, r) => s + r.monthlyCost, 0).toFixed(2);
+
+        document.getElementById("stat-total").textContent  = total;
+        document.getElementById("stat-active").textContent = active;
+        document.getElementById("stat-cpu").textContent    = avgCPU + "%";
+        document.getElementById("stat-memory").textContent = avgMem + "%";
+        document.getElementById("stat-cost").textContent   = "$" + totalCost;
+      }
+
+
+      function renderDashboardTable(resources) {
+        const tbody = document.getElementById("dash-body");
+        tbody.innerHTML = "";
+        resources.forEach((r) => {
+          const row = tbody.insertRow();
+          const cell = (v) => { const td = row.insertCell(); td.textContent = v; };
+          cell(r.name);
+          cell(r.type);
+          cell(r.region);
+          cell(r.cpuUsage + "%");
+          cell(r.memoryUsage + "%");
+          cell("$" + r.monthlyCost.toFixed(2));
+          const td = row.insertCell();
+          const badge = document.createElement("span");
+          badge.textContent = r.status;
+          badge.className = "badge badge-" + r.status;
+          td.appendChild(badge);
+        });
+      }
+

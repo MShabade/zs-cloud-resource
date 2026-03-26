@@ -1,5 +1,5 @@
-feat: add JS globals, showTab, loadResources, searchResources to index.html
+feat: add renderTable, renderDashboard, renderDashboardTable JS functions
 
-Fetch API for HTTP requests: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-async await for concise async code: https://www.w3schools.com/js/js_async.asp
-window load event: https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+Array.prototype.reduce for aggregation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+document.createElement and appendChild: https://www.w3schools.com/jsref/met_document_createelement.asp
+toFixed for currency display: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
