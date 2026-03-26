@@ -633,4 +633,79 @@
           td.appendChild(badge);
         });
       }
-
+
+
+      async function saveResource() {
+        const id      = document.getElementById("edit-id").value;
+        const name    = document.getElementById("f-name").value.trim();
+        const type    = document.getElementById("f-type").value;
+        const region  = document.getElementById("f-region").value;
+        const cpu     = document.getElementById("f-cpu").value;
+        const mem     = document.getElementById("f-mem").value;
+        const storage = document.getElementById("f-storage").value;
+        const cost    = document.getElementById("f-cost").value;
+        const status  = document.getElementById("f-status").value;
+
+        if (!name || !type || !region) {
+          showMsg("form-msg", "Name, Type and Region are required.", "error");
+          return;
+        }
+        if (cpu !== "" && (Number(cpu) < 0 || Number(cpu) > 100)) {
+          showMsg("form-msg", "CPU usage must be between 0 and 100.", "error");
+          return;
+        }
+        if (mem !== "" && (Number(mem) < 0 || Number(mem) > 100)) {
+          showMsg("form-msg", "Memory usage must be between 0 and 100.", "error");
+          return;
+        }
+
+        const payload = { name, type, region, cpuUsage: cpu, memoryUsage: mem,
+                          storageGB: storage, monthlyCost: cost, status };
+        try {
+          let res;
+          if (id) {
+            res = await fetch(`${API}/${id}`, {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+          } else {
+            res = await fetch(API, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+          }
+          if (!res.ok) { const e = await res.json(); throw new Error(e.error || "Save failed"); }
+          showMsg("form-msg", id ? "Resource updated successfully." : "Resource added successfully.", "success");
+          resetForm();
+          loadResources();
+        } catch (err) {
+          showMsg("form-msg", err.message, "error");
+        }
+      }
+
+
+      async function loadIntoForm(id) {
+        try {
+          const res = await fetch(`${API}/${id}`);
+          if (!res.ok) throw new Error("Resource not found");
+          const r = await res.json();
+
+          document.getElementById("edit-id").value   = r.id;
+          document.getElementById("f-name").value    = r.name;
+          document.getElementById("f-type").value    = r.type;
+          document.getElementById("f-region").value  = r.region;
+          document.getElementById("f-cpu").value     = r.cpuUsage;
+          document.getElementById("f-mem").value     = r.memoryUsage;
+          document.getElementById("f-storage").value = r.storageGB;
+          document.getElementById("f-cost").value    = r.monthlyCost;
+          document.getElementById("f-status").value  = r.status;
+
+          document.getElementById("form-title").textContent    = "Edit Resource: " + r.name;
+          document.getElementById("form-subtitle").textContent = "Update the fields below and click Save.";
+          hideMsg("form-msg");
+        } catch (err) {
+          alert("Could not load resource: " + err.message);
+        }
+      }
