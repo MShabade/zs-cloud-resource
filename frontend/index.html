@@ -708,4 +708,23 @@
         } catch (err) {
           alert("Could not load resource: " + err.message);
         }
+      }
+
+
+      async function deleteResource(id, name) {
+        if (!confirm('Delete "' + name + '"? This action cannot be undone.')) return;
+        try {
+          const res = await fetch(`${API}/${id}`, { method: "DELETE" });
+          if (!res.ok) { const e = await res.json(); throw new Error(e.error); }
+          loadResources();
+        } catch (err) {
+          alert("Delete failed: " + err.message);
+        }
+      }
+
+
+      function sortResources(key) {
+        sortDir = (sortKey === key) ? -sortDir : 1;
+        sortKey = key;
+        applySortAndRender();
       }
