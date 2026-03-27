@@ -1,5 +1,5 @@
-feat: add deleteResource and sort helper functions to index.html
+feat: add loadExchangeRates, convertCost, resetForm, showMsg - complete index.html
 
-Array.sort with comparator: https://www.w3schools.com/jsref/jsref_sort.asp
-String.localeCompare for string sorting: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
-window.confirm dialog: https://www.w3schools.com/jsref/met_win_confirm.asp
+Frankfurter currency API: https://www.frankfurter.dev
+Element.className for CSS class management: https://www.w3schools.com/jsref/prop_html_classname.asp
+Element.textContent for safe text: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent

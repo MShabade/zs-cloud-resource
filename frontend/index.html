@@ -467,7 +467,6 @@
     </main>
 
     <script>
-    <script>
       const API = "/api/resources";
 
       let currentResources = [];
@@ -727,4 +726,100 @@
         sortDir = (sortKey === key) ? -sortDir : 1;
         sortKey = key;
         applySortAndRender();
-      }
+      }
+
+      function applySortAndRender() {
+        const sorted = [...currentResources];
+        if (sortKey) {
+          sorted.sort((a, b) => {
+            const va = a[sortKey], vb = b[sortKey];
+            if (typeof va === "number") return (va - vb) * sortDir;
+            return String(va).localeCompare(String(vb)) * sortDir;
+          });
+        }
+        document.querySelectorAll("th.sortable").forEach((th) => {
+          th.classList.remove("sort-asc", "sort-desc");
+          if (th.dataset.key === sortKey) {
+            th.classList.add(sortDir === 1 ? "sort-asc" : "sort-desc");
+          }
+        });
+        renderTable(sorted);
+      }
+
+
+      async function loadExchangeRates() {
+        showMsg("fx-status", "Fetching live exchange rates from frankfurter.app...", "info");
+        try {
+          const res = await fetch("/api/rates");
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const data = await res.json();
+          exchangeRates = data.rates;
+
+          const sel = document.getElementById("fx-currency");
+          sel.innerHTML = '<option value="">-- Select Currency --</option>';
+          Object.keys(exchangeRates).forEach((code) => {
+            const opt = document.createElement("option");
+            opt.value = code;
+            opt.textContent = code;
+            sel.appendChild(opt);
+          });
+
+          hideMsg("fx-status");
+        } catch (err) {
+          showMsg("fx-status", "Could not load exchange rates: " + err.message, "error");
+        }
+      }
+
+      function convertCost() {
+        const currency = document.getElementById("fx-currency").value;
+        const resultEl = document.getElementById("fx-result");
+
+        if (!currency) {
+          resultEl.textContent = "Please select a target currency.";
+          resultEl.className = "fx-result visible";
+          return;
+        }
+        if (!exchangeRates[currency]) {
+          resultEl.textContent = "Rate not available.";
+          resultEl.className = "fx-result visible";
+          return;
+        }
+
+        const totalUSD  = currentResources.reduce((s, r) => s + r.monthlyCost, 0);
+        const converted = (totalUSD * exchangeRates[currency]).toFixed(2);
+        const rate      = exchangeRates[currency].toFixed(4);
+
+        resultEl.textContent =
+          "Total Monthly Cost:  $" + totalUSD.toFixed(2) + " USD" +
+          "  =  " + converted + " " + currency +
+          "   (Rate: 1 USD = " + rate + " " + currency + ")";
+        resultEl.className = "fx-result visible";
+      }
+
+      function resetForm() {
+        ["edit-id","f-name","f-cpu","f-mem","f-storage","f-cost"].forEach((id) => {
+          document.getElementById(id).value = "";
+        });
+        document.getElementById("f-type").value   = "";
+        document.getElementById("f-region").value = "";
+        document.getElementById("f-status").value = "active";
+        document.getElementById("form-title").textContent    = "Add New Resource";
+        document.getElementById("form-subtitle").textContent =
+          "Fill in the details below and click Save. Fields marked * are required.";
+      }
+
+      function cancelEdit() { resetForm(); hideMsg("form-msg"); }
+
+      function showMsg(id, text, type) {
+        const el = document.getElementById(id);
+        el.textContent = text;
+        el.className = "msg visible msg-" + type;
+      }
+      function hideMsg(id) {
+        const el = document.getElementById(id);
+        el.className = "msg";
+        el.textContent = "";
+      }
+    </script>
+  </body>
+</html>
