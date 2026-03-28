@@ -55,4 +55,63 @@ describe("CREATE - create()", () => {
 
     expect(sampleResources).toHaveLength(original.length);
   });
+});
+
+describe("READ - readById()", () => {
+  test("returns the correct resource when ID exists", () => {
+    const result = readById(sampleResources, "res-001");
+
+    expect(result).not.toBeNull();
+    expect(result.name).toBe("analytics-vm-01");
+    expect(result.type).toBe("Virtual Machine");
+  });
+
+  test("returns null when ID does not exist", () => {
+    const result = readById(sampleResources, "res-999");
+
+    expect(result).toBeNull();
+  });
+
+  test("returns null for an empty array", () => {
+    const result = readById([], "res-001");
+
+    expect(result).toBeNull();
+  });
+});
+
+describe("UPDATE - update()", () => {
+  test("updates the specified fields of an existing resource", () => {
+    const result = update(sampleResources, "res-001", { cpuUsage: 90, status: "idle" });
+
+    expect(result).not.toBeNull();
+    expect(result.updated.cpuUsage).toBe(90);
+    expect(result.updated.status).toBe("idle");
+  });
+
+  test("preserves unmodified fields after update", () => {
+    const result = update(sampleResources, "res-001", { cpuUsage: 90 });
+
+    expect(result.updated.name).toBe("analytics-vm-01");
+    expect(result.updated.region).toBe("us-east-1");
+  });
+
+  test("returns the updated resource in the new array", () => {
+    const result = update(sampleResources, "res-002", { monthlyCost: 999 });
+
+    const inArray = result.newArray.find((r) => r.id === "res-002");
+    expect(inArray.monthlyCost).toBe(999);
+  });
+
+  test("returns null when ID does not exist", () => {
+    const result = update(sampleResources, "res-999", { cpuUsage: 50 });
+
+    expect(result).toBeNull();
+  });
+
+  test("does not mutate the original array", () => {
+    const originalCPU = sampleResources[0].cpuUsage;
+    update(sampleResources, "res-001", { cpuUsage: 99 });
+
+    expect(sampleResources[0].cpuUsage).toBe(originalCPU);
+  });
 });

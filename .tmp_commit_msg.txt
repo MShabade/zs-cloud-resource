@@ -1,5 +1,5 @@
-test: scaffold unit.test.js with sample data and CREATE test suite
+test: add READ and UPDATE test suites to unit.test.js
 
-Jest describe test expect API: https://jestjs.io/docs/api
-toHaveLength matcher: https://jestjs.io/docs/expect#tohavelengthnumber
-Testing immutability with spread: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+Jest toBe matcher: https://jestjs.io/docs/expect#tobevalue
+Jest not.toBeNull assertion: https://jestjs.io/docs/expect#tobenulli
+toEqual vs toBe in Jest: https://jestjs.io/docs/expect#toequalvalue
