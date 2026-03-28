@@ -114,4 +114,87 @@ describe("UPDATE - update()", () => {
 
     expect(sampleResources[0].cpuUsage).toBe(originalCPU);
   });
-});
+});
+
+describe("DELETE - remove()", () => {
+  test("removes the resource and returns it as 'deleted'", () => {
+    const result = remove(sampleResources, "res-003");
+
+    expect(result).not.toBeNull();
+    expect(result.deleted.id).toBe("res-003");
+    expect(result.deleted.name).toBe("backup-storage-01");
+  });
+
+  test("the new array no longer contains the deleted resource", () => {
+    const result = remove(sampleResources, "res-003");
+
+    const stillPresent = result.newArray.find((r) => r.id === "res-003");
+    expect(stillPresent).toBeUndefined();
+  });
+
+  test("the new array length is one less than the original", () => {
+    const result = remove(sampleResources, "res-001");
+
+    expect(result.newArray).toHaveLength(sampleResources.length - 1);
+  });
+
+  test("returns null when ID does not exist", () => {
+    const result = remove(sampleResources, "res-999");
+
+    expect(result).toBeNull();
+  });
+
+  test("returns null for an empty array", () => {
+    const result = remove([], "res-001");
+
+    expect(result).toBeNull();
+  });
+});
+
+describe("SEARCH - search()", () => {
+  test("finds resources matching the name", () => {
+    const result = search(sampleResources, "analytics");
+
+    expect(result).toHaveLength(1);
+    expect(result[0].name).toBe("analytics-vm-01");
+  });
+
+  test("finds resources matching the type", () => {
+    const result = search(sampleResources, "database");
+
+    expect(result).toHaveLength(1);
+    expect(result[0].type).toBe("Database");
+  });
+
+  test("finds resources matching the region", () => {
+    const result = search(sampleResources, "eu-west-1");
+
+    expect(result).toHaveLength(1);
+    expect(result[0].region).toBe("eu-west-1");
+  });
+
+  test("finds resources matching the status", () => {
+    const result = search(sampleResources, "idle");
+
+    expect(result).toHaveLength(1);
+    expect(result[0].status).toBe("idle");
+  });
+
+  test("search is case-insensitive", () => {
+    const result = search(sampleResources, "VIRTUAL MACHINE");
+
+    expect(result).toHaveLength(1);
+  });
+
+  test("returns empty array when no match found", () => {
+    const result = search(sampleResources, "nonexistent-term");
+
+    expect(result).toHaveLength(0);
+  });
+
+  test("returns all resources when query matches all", () => {
+    const result = search(sampleResources, "us-east-1");
+
+    expect(result).toHaveLength(2);
+  });
+});

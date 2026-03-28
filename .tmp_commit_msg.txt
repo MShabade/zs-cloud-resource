@@ -1,5 +1,5 @@
-test: add READ and UPDATE test suites to unit.test.js
+test: add DELETE and SEARCH suites - completing unit.test.js with 28 tests
 
-Jest toBe matcher: https://jestjs.io/docs/expect#tobevalue
-Jest not.toBeNull assertion: https://jestjs.io/docs/expect#tobenulli
-toEqual vs toBe in Jest: https://jestjs.io/docs/expect#toequalvalue
+Jest toBeUndefined matcher: https://jestjs.io/docs/expect#tobeundefined
+Testing case-insensitive search: https://jestjs.io/docs/using-matchers
+Array.prototype.filter tested via remove: https://www.w3schools.com/jsref/jsref_filter.asp
