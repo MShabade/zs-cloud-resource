@@ -1,5 +1,5 @@
-feat: add loadExchangeRates, convertCost, resetForm, showMsg - complete index.html
+test: scaffold unit.test.js with sample data and CREATE test suite
 
-Frankfurter currency API: https://www.frankfurter.dev
-Element.className for CSS class management: https://www.w3schools.com/jsref/prop_html_classname.asp
-Element.textContent for safe text: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+Jest describe test expect API: https://jestjs.io/docs/api
+toHaveLength matcher: https://jestjs.io/docs/expect#tohavelengthnumber
+Testing immutability with spread: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
