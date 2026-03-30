@@ -1,5 +1,5 @@
-test: add DELETE and SEARCH suites - completing unit.test.js with 28 tests
+test: scaffold integration.test.js with Supertest - POST test cases
 
-Jest toBeUndefined matcher: https://jestjs.io/docs/expect#tobeundefined
-Testing case-insensitive search: https://jestjs.io/docs/using-matchers
-Array.prototype.filter tested via remove: https://www.w3schools.com/jsref/jsref_filter.asp
+Supertest docs: https://www.npmjs.com/package/supertest
+Jest beforeAll afterAll lifecycle hooks: https://jestjs.io/docs/api#beforeallfn-timeout
+process.env.DATA_FILE for test isolation: https://nodejs.org/api/process.html#processenv
