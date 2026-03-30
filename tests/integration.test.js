@@ -63,4 +63,43 @@ describe("Cloud Resource API - Full CRUD Integration", () => {
 
     expect(res.status).toBe(400);
     expect(res.body.error).toMatch(/cpu/i);
+  });
+
+  test("GET /api/resources - returns an array of all resources (200)", async () => {
+    const res = await request(app).get("/api/resources");
+
+    expect(res.status).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.body.length).toBeGreaterThan(0);
+  });
+
+  test("GET /api/resources/:id - returns the correct resource (200)", async () => {
+    const res = await request(app).get(`/api/resources/${createdId}`);
+
+    expect(res.status).toBe(200);
+    expect(res.body.id).toBe(createdId);
+    expect(res.body.name).toBe("integration-vm");
+  });
+
+  test("GET /api/resources/:id - returns 404 for unknown ID", async () => {
+    const res = await request(app).get("/api/resources/nonexistent-id");
+
+    expect(res.status).toBe(404);
+    expect(res.body).toHaveProperty("error");
+  });
+
+  test("GET /api/resources?search= - filters results by search term (200)", async () => {
+    const res = await request(app).get("/api/resources?search=integration");
+
+    expect(res.status).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.body.length).toBeGreaterThan(0);
+    expect(res.body[0].name).toContain("integration");
+  });
+
+  test("GET /api/resources?search= - returns empty array when no match", async () => {
+    const res = await request(app).get("/api/resources?search=zzznomatch999");
+
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveLength(0);
   });

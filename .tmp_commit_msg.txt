@@ -1,5 +1,5 @@
-test: scaffold integration.test.js with Supertest - POST test cases
+test: add GET integration tests - list, get by ID, search query param
 
-Supertest docs: https://www.npmjs.com/package/supertest
-Jest beforeAll afterAll lifecycle hooks: https://jestjs.io/docs/api#beforeallfn-timeout
-process.env.DATA_FILE for test isolation: https://nodejs.org/api/process.html#processenv
+Supertest GET request: https://github.com/ladjs/supertest#get
+Jest toBeGreaterThan: https://jestjs.io/docs/expect#tobegreaterthanumber
+Jest toContain for string matching: https://jestjs.io/docs/expect#tocontainitem
