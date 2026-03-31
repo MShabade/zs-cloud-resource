@@ -102,4 +102,44 @@ describe("Cloud Resource API - Full CRUD Integration", () => {
 
     expect(res.status).toBe(200);
     expect(res.body).toHaveLength(0);
-  });
+  });
+
+  test("PUT /api/resources/:id - updates specified fields (200)", async () => {
+    const res = await request(app)
+      .put(`/api/resources/${createdId}`)
+      .send({ cpuUsage: 85, status: "idle" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.cpuUsage).toBe(85);
+    expect(res.body.status).toBe("idle");
+    expect(res.body.name).toBe("integration-vm");
+  });
+
+  test("PUT /api/resources/:id - returns 404 for unknown ID", async () => {
+    const res = await request(app)
+      .put("/api/resources/nonexistent-id")
+      .send({ cpuUsage: 50 });
+
+    expect(res.status).toBe(404);
+  });
+
+  test("DELETE /api/resources/:id - removes the resource (200)", async () => {
+    const res = await request(app).delete(`/api/resources/${createdId}`);
+
+    expect(res.status).toBe(200);
+    expect(res.body.message).toBe("Resource deleted successfully");
+    expect(res.body.resource.id).toBe(createdId);
+  });
+
+  test("GET /api/resources/:id - returns 404 after deletion", async () => {
+    const res = await request(app).get(`/api/resources/${createdId}`);
+
+    expect(res.status).toBe(404);
+  });
+
+  test("DELETE /api/resources/:id - returns 404 for unknown ID", async () => {
+    const res = await request(app).delete("/api/resources/nonexistent-id");
+
+    expect(res.status).toBe(404);
+  });
+});

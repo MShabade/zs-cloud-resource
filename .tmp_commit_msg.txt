@@ -1,5 +1,5 @@
-test: add GET integration tests - list, get by ID, search query param
+test: add PUT and DELETE tests - complete integration suite with 14 tests
 
-Supertest GET request: https://github.com/ladjs/supertest#get
-Jest toBeGreaterThan: https://jestjs.io/docs/expect#tobegreaterthanumber
-Jest toContain for string matching: https://jestjs.io/docs/expect#tocontainitem
+Supertest PUT DELETE: https://github.com/ladjs/supertest
+Jest test ordering with shared let variable: https://jestjs.io/docs/setup-teardown
+HTTP 200 DELETE response with body: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE
