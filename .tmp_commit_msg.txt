@@ -1,5 +1,4 @@
-test: add PUT and DELETE tests - complete integration suite with 14 tests
+chore: add .gitignore - exclude node_modules, test artefacts, env files
 
-Supertest PUT DELETE: https://github.com/ladjs/supertest
-Jest test ordering with shared let variable: https://jestjs.io/docs/setup-teardown
-HTTP 200 DELETE response with body: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE
+.gitignore syntax: https://git-scm.com/docs/gitignore
+Node.js gitignore best practices: https://www.toptal.com/developers/gitignore/api/node
