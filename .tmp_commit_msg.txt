@@ -1,5 +1,5 @@
-fix: coerce PORT env variable to Number and add explanatory comment
+docs: add API endpoint reference table to README
 
-process.env values are always strings: https://nodejs.org/api/process.html#processenv
-Express app.listen port must be a number: https://expressjs.com/en/api.html#app.listen
-Number coercion in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+Markdown table syntax: https://www.markdownguide.org/extended-syntax/#tables
+RESTful API design conventions: https://restfulapi.net/resource-naming/
+Express routing docs: https://expressjs.com/en/guide/routing.html
