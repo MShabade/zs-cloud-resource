@@ -1,4 +1,5 @@
-chore: add .gitignore - exclude node_modules, test artefacts, env files
+fix: coerce PORT env variable to Number and add explanatory comment
 
-.gitignore syntax: https://git-scm.com/docs/gitignore
-Node.js gitignore best practices: https://www.toptal.com/developers/gitignore/api/node
+process.env values are always strings: https://nodejs.org/api/process.html#processenv
+Express app.listen port must be a number: https://expressjs.com/en/api.html#app.listen
+Number coercion in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number

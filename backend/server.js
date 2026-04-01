@@ -4,7 +4,8 @@ const path = require("path");
 const resourceRoutes = require("./routes/resources");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+// process.env values are strings - coerce to Number for Express
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(cors());
 app.use(express.json());
