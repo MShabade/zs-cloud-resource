@@ -49,3 +49,6 @@ unit.test.js - Unit tests (28 tests)
 | PUT    | /api/resources/:id     | Update resource by ID                 |
 | DELETE | /api/resources/:id     | Delete resource by ID                 |
 | GET    | /api/rates             | Fetch live USD exchange rates         |
+
+---
+*42 tests total - all passing. Run `npm test` to verify.*

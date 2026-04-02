@@ -1,5 +1,4 @@
-style: ensure newline at end of operations.js per POSIX standard
+docs: add test count note to README footer
 
-POSIX standard for newline at end of file: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html
-EditorConfig insert_final_newline: https://editorconfig.org
-ESLint eol-last rule: https://eslint.org/docs/latest/rules/eol-last
+Jest test results reporting: https://jestjs.io/docs/cli#--verbose
+Markdown horizontal rule: https://www.markdownguide.org/basic-syntax/#horizontal-rules
