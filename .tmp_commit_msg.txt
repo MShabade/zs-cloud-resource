@@ -1,5 +1,5 @@
-docs: add API endpoint reference table to README
+style: ensure newline at end of operations.js per POSIX standard
 
-Markdown table syntax: https://www.markdownguide.org/extended-syntax/#tables
-RESTful API design conventions: https://restfulapi.net/resource-naming/
-Express routing docs: https://expressjs.com/en/guide/routing.html
+POSIX standard for newline at end of file: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html
+EditorConfig insert_final_newline: https://editorconfig.org
+ESLint eol-last rule: https://eslint.org/docs/latest/rules/eol-last
