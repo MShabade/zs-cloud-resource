@@ -1,4 +1,5 @@
-docs: add test count note to README footer
+docs: add implementation notes section to README
 
-Jest test results reporting: https://jestjs.io/docs/cli#--verbose
-Markdown horizontal rule: https://www.markdownguide.org/basic-syntax/#horizontal-rules
+JSON as lightweight persistent storage for prototypes: https://www.w3schools.com/js/js_json_intro.asp
+npm install docs: https://docs.npmjs.com/cli/v10/commands/npm-install
+Node.js JSON file persistence pattern: https://www.geeksforgeeks.org/how-to-read-and-write-json-file-using-node-js/

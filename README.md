@@ -52,3 +52,8 @@ unit.test.js - Unit tests (28 tests)
 
 ---
 *42 tests total - all passing. Run `npm test` to verify.*
+
+## Notes
+- All API endpoints return JSON
+- Data persists to backend/data/resources.json
+- Run npm install before npm start or npm test
