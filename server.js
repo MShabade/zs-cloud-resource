@@ -62,7 +62,9 @@ http.createServer((req, res) => {
   if (!p.startsWith(publicDir) || !fs.existsSync(p)) return send(res, 404, 'not found', 'text/plain');
   const type = p.endsWith('.js') ? 'text/javascript' : 'text/html';
   send(res, 200, fs.readFileSync(p), type);
-}).listen(3000, () => console.log('server ready at http://localhost:3000'));
+}).listen(3000, '0.0.0.0', () =>
+  console.log('server running at http://localhost:3000')
+);
 
 function send(res, code, body, type = 'application/json') {
   res.writeHead(code, { 'Content-Type': type });
