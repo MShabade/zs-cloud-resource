@@ -18,22 +18,45 @@ Backend: Node.js, Express
 Data Store: JSON file
 Frontend: HTML, CSS, vanilla JavaScript
 Testing: Jest, Supertest
-## Setup Local access
-npm install
-npm start
-Open http://localhost:3000 in a browser to access locally.
 
-## Setup usin EC2 host
+## Setup – Local Access
 
-Launched an AWS EC2 t2.micro (Free Tier) instance in the Ireland (eu-west-1) region using Amazon Linux 2023.
-Created a key pair and connected securely via SSH: ssh -i zs-resource-manager-key.pem ec2-user@52.215.183.57.
-Opened required ports (22, 80, 3000) and updated the system using sudo yum update.
-Installed Node.js 18 and PM2 globally to run the app in the background.
-Uploaded project files using SCP: scp -i key-file -r folder ec2-user@52.215.183.57:/home/ec2-user/.
-Installed dependencies with npm install --production.
-Started the app using PM2: PORT=3000 pm2 start server.js --name zs-app and saved config with pm2 save & pm2 startup.
-Application is live at http://52.215.183.57:3000  ( using AWS cloud )
- and running smoothly with low CPU and memory usage.
+- Install dependencies:  
+  `npm install`
+
+- Start the application:  
+  `npm start`
+
+- Open in browser:  
+  http://localhost:3000
+
+
+## Setup using EC2 Host
+
+- Launched an AWS EC2 t2.micro (Free Tier) instance in Ireland (eu-west-1) using Amazon Linux 2023  
+
+- Connected securely via SSH:  
+  `ssh -i zs-resource-manager-key.pem ec2-user@52.215.183.57`
+
+- Opened required ports (22, 80, 3000) and updated system:  
+  `sudo yum update`
+
+- Installed Node.js 18 and PM2 globally  
+
+- Uploaded project files using SCP:  
+  `scp -i key-file -r folder ec2-user@52.215.183.57:/home/ec2-user/`
+
+- Installed dependencies:  
+  `npm install --production`
+
+- Started the application using PM2:  
+  `PORT=3000 pm2 start server.js --name zs-app`
+
+- Saved PM2 configuration:  
+  `pm2 save` and `pm2 startup`
+
+- Access the application:  
+  http://52.215.183.57:3000
 
 ## Run Tests
 npm test
